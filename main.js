@@ -1,5 +1,6 @@
 import Point from "./Point.js";
 import Line from "./Line.js";
+import Grid from "./Grid.js";
 const log = console.log;
 
 // * DOM Element selection
@@ -22,6 +23,18 @@ const { width: WIDTH, height: HEIGHT } = canvas;
 // * Code starts here
 const pointsArray = [];
 const line = new Line(ctx, "white");
+const grid = new Grid(
+    canvas,
+    ctx,
+    50,
+    50,
+    10,
+    10,
+    1,
+    0.5,
+    "#454545",
+    "#303030"
+);
 
 // * Helper Functions
 const clearCanvas = () => {
@@ -78,6 +91,7 @@ randomizeBtn.addEventListener("click", () => {
 // * Animation Loop
 function draw() {
     clearCanvas();
+    grid.draw();
     // * Draw the points from pointsArray
     // * Draw best fitting line for the points
 

@@ -9,7 +9,8 @@ export default class Grid {
         majorLineWidth,
         minorLineWidth,
         majorLineColor = "grey",
-        minorLineColor = "grey"
+        minorLineColor = "grey",
+        textColor = "grey"
     ) {
         this.majorXAt = majorXAt;
         this.majorYAt = majorYAt;
@@ -25,6 +26,8 @@ export default class Grid {
 
         this.majorLineWidth = majorLineWidth;
         this.minorLineWidth = minorLineWidth;
+
+        this.textColor = textColor;
     }
 
     draw() {
@@ -38,6 +41,9 @@ export default class Grid {
                     i,
                     this.canvas.height
                 );
+                this.ctx.font = "12px Courier";
+                this.ctx.fillStyle = "white";
+                this.ctx.fillText(i, i, this.canvas.height - 2);
             }
             if (i % this.minorXAt === 0) {
                 drawVerticalLine(
@@ -60,6 +66,9 @@ export default class Grid {
                     this.canvas.width,
                     i
                 );
+                this.ctx.font = "12px Courier";
+                this.ctx.fillStyle = "white";
+                this.ctx.fillText(this.canvas.width - i, 0, i - 2);
             }
             if (i % this.minorYAt === 0) {
                 drawHorizontalLine(

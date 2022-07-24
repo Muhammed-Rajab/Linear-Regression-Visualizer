@@ -10,7 +10,7 @@ body {
     min-height: 100vh;
     background: rgb(15, 15, 15);
     row-gap: 1rem;
-    font-family: "Courier", sans-serif;
+    font-family: "Courier", monospace, sans-serif;
 }
 canvas {
 }
